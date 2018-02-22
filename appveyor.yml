@@ -27,7 +27,5 @@ before_build:
       mkdir build
       cd build
       cmake ..
-build:
-  project: c:\projects\versa3d\build\Versa3dVer2.sln
 
 
