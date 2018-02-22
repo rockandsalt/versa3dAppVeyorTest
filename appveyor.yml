@@ -11,21 +11,21 @@ clone_folder : c:\projects\versa3d
 image:
   - Visual Studio 2017
 
-platform: x64
-
 configuration: Release
+
+environment:
+  matrix: 
+    - platform: x64
+    - build_command : build.bat
 
 matrix: 
   fast_finish: true
 
 install:
   - set QTDIR=C:\Qt\5.10.0\msvc2017_64
-  - set PATH=%PATH%;%QTDIR%\bin
+  - set PATH=%PATH%;%QTDIR%\bin;
 
-before_build:
-  -cmd: |-
-      mkdir build
-      cd build
-      cmake ..
+build_script:
+  - cmd : %build_command%
 
 
