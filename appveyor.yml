@@ -21,7 +21,7 @@ install:
   - set PATH=%PATH%;%QTDIR%\bin;
 
 build:
-  project: INSTALL.vcxproj 
+  project: c:\projects\versa3d\build\INSTALL.vcxproj
 
 before_build:
   - cd c:\projects\versa3d
