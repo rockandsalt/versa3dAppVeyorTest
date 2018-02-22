@@ -17,7 +17,7 @@ matrix:
   fast_finish: true
 
 install:
-  - set QTDIR=C:\Qt\5.10.0\
+  - set QTDIR=C:\Qt\5.10.0\msvc2017_64
   - set PATH=%PATH%;%QTDIR%\bin;
 
 build_script:
