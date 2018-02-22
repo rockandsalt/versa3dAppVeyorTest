@@ -20,14 +20,14 @@ install:
   - set QTDIR=C:\Qt\5.10.0\msvc2017_64
   - set PATH=%PATH%;%QTDIR%\bin;
 
-build:
-  - cmake --build .
-
 before_build:
   - cd c:\projects\versa3d
   - mkdir build
   - cd build
-  - cmake -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=Release ..
+  - cmake -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE="%configuration%" ..
+
+build script:
+  - cmake --build .  
 
 after_build:
   - cd c:\projects\versa3d\build
