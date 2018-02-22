@@ -4,7 +4,7 @@ version: 1.0-{branch}-{build}
 branches:
   only:
     - master 
-    - production
+    - appveyor
 
 clone_folder : c:\projects\versa3d
 
