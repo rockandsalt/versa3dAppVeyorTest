@@ -20,7 +20,24 @@ install:
   - set QTDIR=C:\Qt\5.10.0\msvc2017_64
   - set PATH=%PATH%;%QTDIR%\bin;
 
-build_script:
-  - cmd : "build.bat"
+build:
+  project: INSTALL.vcxproj 
+
+before_build:
+  - cd c:\projects\versa3d
+  - mkdir build
+  - cd build
+  - cmake -G "Visual Studio 15 2017 Win64" ..
+
+after_build:
+  - cd c:\projects\versa3d\build
+  - 7z a c:\projects\versa3d\build\Versa3d.zip * -tzip
+
+artifacts: 
+  - path : c:\projects\versa3d\build\Versa3d.zip
+    name : Versa3d.zip
+
+
+
 
 
