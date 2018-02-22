@@ -21,13 +21,13 @@ install:
   - set PATH=%PATH%;%QTDIR%\bin;
 
 build:
-  project: c:\projects\versa3d\build\INSTALL.vcxproj
+  - cmake --build .
 
 before_build:
   - cd c:\projects\versa3d
   - mkdir build
   - cd build
-  - cmake -G "Visual Studio 15 2017 Win64" ..
+  - cmake -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=Release ..
 
 after_build:
   - cd c:\projects\versa3d\build
