@@ -1,3 +1,34 @@
 
-version:1.0-{branch}-{build}
+version: 1.0-{branch}-{build}
+
+branches:
+  only:
+    - master 
+    - production
+
+clone_folder : c:\projects\versa3d
+
+image:
+  - Visual Studio 2017
+  - Visual Studio 2015
+
+platform: any CPU
+
+configuration: Release
+
+matrix: 
+  fast_finish: true
+
+install:
+  -set QTDIR= C:\Qt\5.10.0\mingw53_32
+  -set PATH=%PATH%;%QTDIR%\bin;C:\MinGW\bin
+
+before_buil:
+  -cmd: |-
+      mkdir build
+      cd build
+      cmake ..
+build:
+  project: c:\projects\versa3d\build\
+
 
