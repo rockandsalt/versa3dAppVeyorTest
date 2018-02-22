@@ -24,17 +24,17 @@ before_build:
   - cd c:\projects\versa3d
   - mkdir build
   - cd build
-  - cmake -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=Release ..
+  - cmake -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE="Release" ..
 
-build_script:
-  - cmake --build .  
+build:
+  project: c:\projects\versa3d\build\ALL_BUILD.vcxproj
 
 after_build:
   - cd c:\projects\versa3d\build
-  - 7z a Versa3d.zip * -tzip
+  - 7z a c:\projects\versa3d\build\Versa3d.zip * -tzip
 
 artifacts: 
-  - path : c:\projects\versa3d\build\Versa3d.zip
+  - path : \build\Versa3d.zip
     name : Versa3d.zip
 
 
