@@ -26,6 +26,6 @@ install:
   - set PATH=%PATH%;%QTDIR%\bin;
 
 build_script:
-  - cmd : %build_command%
+  - cmd : '%build_command%
 
 
